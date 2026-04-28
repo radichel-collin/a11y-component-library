@@ -4,7 +4,6 @@ interface ButtonProps {
   disabled?: boolean;
   ariaLabel?: string;
   onClick?: () => void;
-  className?: string;
 }
 
 const variantClasses = {
@@ -20,7 +19,6 @@ function Button({
   disabled = false,
   ariaLabel,
   onClick,
-  className,
 }: ButtonProps) {
   return (
     <button
@@ -36,7 +34,6 @@ function Button({
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2
         disabled:opacity-50 disabled:cursor-not-allowed
         ${variantClasses[variant]}
-        ${className ?? ''}
       `}
     >
       {children}
