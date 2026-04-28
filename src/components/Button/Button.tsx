@@ -1,21 +1,21 @@
 interface ButtonProps {
-    children: React.ReactNode
-    variant?: 'primary' | 'secondary' | 'ghost' | 'danger'
-    disabled?: boolean
-    ariaLabel?: string
-    onClick?: () => void
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "ghost" | "danger";
+  disabled?: boolean;
+  ariaLabel?: string;
+  onClick?: () => void;
 }
 
 const variantClasses = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700',
-  secondary: 'border border-blue-600 text-blue-600 hover:bg-blue-50',
-  ghost: 'text-blue-600 hover:bg-blue-50',
-  danger: 'bg-red-600 text-white hover:bg-red-700',
-}
+  primary: "bg-blue-600 text-white hover:bg-blue-700",
+  secondary: "border border-blue-600 text-blue-600 hover:bg-blue-50",
+  ghost: "text-blue-600 hover:bg-blue-50",
+  danger: "bg-red-600 text-white hover:bg-red-700",
+};
 
 function Button({
   children,
-  variant = 'primary',
+  variant = "primary",
   disabled = false,
   ariaLabel,
   onClick,
@@ -38,7 +38,7 @@ function Button({
     >
       {children}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;
