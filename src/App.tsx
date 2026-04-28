@@ -30,7 +30,7 @@ const [error, setError] = useState('')
         <h2 id="input-heading" className="text-xl font-semibold text-gray-700 mb-4">
           Input
         </h2>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap items-start gap-4">
           <Input
           id="username"
           label="Username"
@@ -40,6 +40,7 @@ const [error, setError] = useState('')
           errorMessage={error}
           />
           <Button
+          className="mt-6"
           onClick={() => {
             if (inputValue.length < 10) {
               setError('Username must be at least 10 characters')
