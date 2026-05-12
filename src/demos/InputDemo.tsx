@@ -21,6 +21,7 @@ function InputDemo() {
           helperText="Minimum 10 characters"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          required
           errorMessage={error}
         />
         <div className="mt-6">

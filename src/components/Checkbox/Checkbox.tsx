@@ -46,13 +46,6 @@ export default function Checkbox({
         )}
       </label>
     </div>
-    <div>
-      {errorMessage && (
-        <p id={`${id}-error`} className="text-sm text-red-500" role="alert">
-            {errorMessage}
-        </p>
-    )}
-    </div>
     </>
   );
 }

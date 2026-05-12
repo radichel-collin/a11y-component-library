@@ -22,6 +22,7 @@ export default function CheckboxDemo() {
           checked={checked}
           onChange={(e) => setChecked(e.target.checked)}
           errorMessage={error}
+          required
         ></Checkbox>
         <Button
           onClick={() => {
