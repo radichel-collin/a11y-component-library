@@ -1,5 +1,6 @@
 import ButtonDemo from './demos/ButtonDemo'
 import InputDemo from './demos/InputDemo'
+import CheckboxDemo from './demos/CheckboxDemo'
 
 
 function App() {
@@ -9,8 +10,9 @@ function App() {
       <h1 className="text-4xl font-bold text-gray-900 mb-8">
         Component Library
       </h1>
-      <ButtonDemo/>
-      <InputDemo/>
+      <ButtonDemo />
+      <InputDemo />
+      <CheckboxDemo />
     </main>
   )
 }

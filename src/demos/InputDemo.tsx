@@ -10,7 +10,7 @@ function InputDemo() {
     <section aria-labelledby="input-heading">
       <h2
         id="input-heading"
-        className="text-xl font-semibold text-gray-700 mb-4"
+        className="text-xl font-semibold text-gray-700 mt-6 mb-3"
       >
         Input
       </h2>
@@ -26,11 +26,10 @@ function InputDemo() {
         <div className="mt-6">
           <Button
             onClick={() => {
-              if (inputValue.length < 10) {
-                setError("Username must be at least 10 characters");
-              } else {
+              inputValue.length < 10 ?
+                setError("Username must be at least 10 characters")
+                :
                 setError("");
-              }
             }}
             variant="primary"
           >

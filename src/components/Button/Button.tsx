@@ -13,7 +13,7 @@ const variantClasses = {
   danger: "bg-red-600 text-white hover:bg-red-700",
 };
 
-function Button({
+export default function Button({
   children,
   variant = "primary",
   disabled = false,
@@ -40,5 +40,3 @@ function Button({
     </button>
   );
 }
-
-export default Button;

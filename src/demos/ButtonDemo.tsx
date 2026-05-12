@@ -5,7 +5,7 @@ function ButtonDemo() {
     return (
     
     <section aria-labelledby="button-heading">
-        <h2 id="button-heading" className="text-xl font-semibold text-gray-700 mb-4">
+        <h2 id="button-heading" className="text-xl font-semibold text-gray-700 mt-6 mb-3">
           Buttons
         </h2>
         <div className="flex flex-wrap gap-4">

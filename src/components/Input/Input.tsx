@@ -11,7 +11,7 @@ interface InputProps {
   required?: boolean;
 }
 
-function Input({
+export default function Input({
   id,
   label,
   type = "text",
@@ -63,5 +63,3 @@ function Input({
     </div>
   );
 }
-
-export default Input;
