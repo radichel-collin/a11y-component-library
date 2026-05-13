@@ -5,6 +5,7 @@ import { useState } from "react";
 function InputDemo() {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   return (
     <section aria-labelledby="input-heading">
@@ -23,14 +24,18 @@ function InputDemo() {
           onChange={(e) => setInputValue(e.target.value)}
           required
           errorMessage={error}
+          successMessage={success}
         />
         <div className="mt-6">
           <Button
             onClick={() => {
-              inputValue.length < 10 ?
+             if (inputValue.length < 10) {
                 setError("Username must be at least 10 characters")
-                :
-                setError("");
+                setSuccess("") }
+            else {
+                setSuccess("Username submitted")
+                setError("")
+            }
             }}
             variant="primary"
           >
