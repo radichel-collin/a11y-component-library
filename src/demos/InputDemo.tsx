@@ -30,7 +30,7 @@ function InputDemo() {
           <Button
             onClick={() => {
              if (inputValue.length < 10) {
-                setError("Username must be at least 10 characters")
+                setError("Username must be at least 10 characters.")
                 setSuccess("") }
             else {
                 setSuccess("Username submitted")

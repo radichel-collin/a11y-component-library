@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function CheckboxDemo() {
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   return (
     <section aria-labelledby="checkbox-heading">
@@ -16,28 +17,34 @@ export default function CheckboxDemo() {
       </h2>
       <div className="flex flex-col">
         <div className="flex items-center gap-4">
-        <Checkbox
-          id="terms-checkbox"
-          label="I agree to the terms & conditions"
-          checked={checked}
-          onChange={(e) => setChecked(e.target.checked)}
-          errorMessage={error}
-          required
-        ></Checkbox>
-        <Button
-          onClick={() => {
-            checked
-              ? setError("")
-              : setError("Please accept the terms and conditions to proceed");
-          }}
-          variant="primary"
-        >
-          Submit
-        </Button>
+          <Checkbox
+            id="terms-checkbox"
+            label="I agree to the terms & conditions"
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+            errorMessage={error}
+          ></Checkbox>
+          <Button
+            onClick={() => {
+              if (!checked) {
+                setError("Please accept the terms and conditions to proceed.");
+                setSuccess("");
+              } else {
+                setSuccess("Success");
+                setError("");
+              }
+            }}
+            variant="primary"
+          >
+            Submit
+          </Button>
         </div>
-        {error && (
-          <p className="text-sm text-red-500" role="alert">{error}</p>
-        )}
+        <p id="terms-checkbox-error" className="text-sm text-red-700" role="alert">
+          {error}
+        </p>
+        <p id="terms-checkbox-success" className="text-sm text-green-700" role="status">
+          {success}
+        </p>
       </div>
     </section>
   );

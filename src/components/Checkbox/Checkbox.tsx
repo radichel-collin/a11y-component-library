@@ -17,35 +17,36 @@ export default function Checkbox({
   disabled = false,
   errorMessage,
 }: CheckboxProps) {
+
   return (
     <>
-    <div className="flex items-center gap-2">
-      <input
-        id={id}
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
-        required={required}
-        aria-describedby={`${id}-error`}
-        className={`
+      <div className="flex items-center gap-2">
+        <input
+          id={id}
+          type="checkbox"
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+          required={required}
+          aria-invalid={Boolean(errorMessage)}
+          aria-describedby={`${id}-error ${id}-success`}
+          className={`
         w-4 h-4
         border
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
         cursor-pointer
         disabled:opacity-50 disabled:cursor-not-allowed
-        ${errorMessage ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"}
         `}
-      />
-      <label htmlFor={id} className="text-sm font-medium text-gray-700">
-        {label}
-        {required && (
-          <span className="text-red-500 ml-1" aria-hidden="true">
-            *
-          </span>
-        )}
-      </label>
-    </div>
+        />
+        <label htmlFor={id} className="text-sm font-medium text-gray-700">
+          {label}
+          {required && (
+            <span className="text-red-500 ml-1" aria-hidden="true">
+              *
+            </span>
+          )}
+        </label>
+      </div>
     </>
   );
 }
