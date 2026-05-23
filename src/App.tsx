@@ -6,7 +6,7 @@ import CheckboxDemo from './demos/CheckboxDemo'
 function App() {
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
+    <main className="min-h-screen p-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-8">
         a11y Component Library
       </h1>
