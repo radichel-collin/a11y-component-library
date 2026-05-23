@@ -1,11 +1,12 @@
 import Input from "../components/Input";
 import Button from "../components/Button";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function InputDemo() {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <section aria-labelledby="input-heading">
@@ -25,12 +26,14 @@ function InputDemo() {
           required
           errorMessage={error}
           successMessage={success}
+          ref={inputRef}
         />
         <div className="mt-6">
           <Button
             onClick={() => {
              if (inputValue.length < 10) {
                 setError("Username must be at least 10 characters.")
+                inputRef.current?.focus()
                 setSuccess("") }
             else {
                 setSuccess("Username submitted")

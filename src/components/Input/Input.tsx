@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 interface InputProps {
   id: string;
   label: string;
@@ -12,7 +14,7 @@ interface InputProps {
   required?: boolean;
 }
 
-export default function Input({
+const Input = forwardRef<HTMLInputElement, InputProps>(({
   id,
   label,
   type = "text",
@@ -24,12 +26,12 @@ export default function Input({
   successMessage,
   disabled = false,
   required = false,
-}: InputProps) {
+}, ref) => {
   let borderClass;
   if (errorMessage) {
     borderClass = "border-red-600";
   } else if (successMessage) {
-    borderClass = "border-green-500";
+    borderClass = "border-green-600";
   } else {
     borderClass = "border-gray-300";
   }
@@ -52,6 +54,7 @@ export default function Input({
         placeholder={placeholder}
         disabled={disabled}
         required={required}
+        ref={ref}
         aria-invalid={Boolean(errorMessage)}
         aria-describedby={`${id}-helper ${id}-error ${id}-success`}
         className={`
@@ -65,7 +68,7 @@ export default function Input({
       <p id={`${id}-helper`} className="text-sm text-gray-500">
         {helperText}
       </p>
-      <p id={`${id}-error`} className="text-sm text-red-700" role="alert">
+      <p id={`${id}-error`} className="text-sm text-red-600" role="alert">
         {errorMessage}
       </p>
       <p id={`${id}-success`} className="text-sm text-green-700" role="status">
@@ -73,4 +76,6 @@ export default function Input({
       </p>
     </div>
   );
-}
+});
+
+export default Input;
