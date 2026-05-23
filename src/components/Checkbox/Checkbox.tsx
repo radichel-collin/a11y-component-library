@@ -29,7 +29,7 @@ export default function Checkbox({
           disabled={disabled}
           required={required}
           aria-invalid={Boolean(errorMessage)}
-          aria-describedby={`${id}-error ${id}-success`}
+          aria-describedby={`${id}-error`}
           className={`
         w-4 h-4
         border

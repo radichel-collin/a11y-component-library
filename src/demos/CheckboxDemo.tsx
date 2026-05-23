@@ -22,6 +22,7 @@ export default function CheckboxDemo() {
             label="I agree to the terms & conditions"
             checked={checked}
             onChange={(e) => setChecked(e.target.checked)}
+            required
             errorMessage={error}
           ></Checkbox>
           <Button
@@ -30,7 +31,7 @@ export default function CheckboxDemo() {
                 setError("Please accept the terms and conditions to proceed.");
                 setSuccess("");
               } else {
-                setSuccess("Success");
+                setSuccess("Success!");
                 setError("");
               }
             }}
@@ -39,7 +40,7 @@ export default function CheckboxDemo() {
             Submit
           </Button>
         </div>
-        <p id="terms-checkbox-error" className="text-sm text-red-700" role="alert">
+        <p id="terms-checkbox-error" className="text-sm text-red-600" role="alert">
           {error}
         </p>
         <p id="terms-checkbox-success" className="text-sm text-green-700" role="status">
