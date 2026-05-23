@@ -1,6 +1,7 @@
 import ButtonDemo from './demos/ButtonDemo'
 import InputDemo from './demos/InputDemo'
 import CheckboxDemo from './demos/CheckboxDemo'
+import CheckboxGroupDemo from './demos/CheckboxGroupDemo'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <ButtonDemo />
       <InputDemo />
       <CheckboxDemo />
+      <CheckboxGroupDemo />
     </main>
   )
 }

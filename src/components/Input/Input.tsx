@@ -65,7 +65,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   ${borderClass}
 `}
       />
-      <p id={`${id}-helper`} className="text-sm text-gray-500">
+      <p id={`${id}-helper`} className="text-sm text-gray-600">
         {helperText}
       </p>
       <p id={`${id}-error`} className="text-sm text-red-600" role="alert">
