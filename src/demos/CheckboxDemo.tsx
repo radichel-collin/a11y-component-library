@@ -1,4 +1,4 @@
-import Checkbox from "../components/Checkbox/Checkbox";
+import Checkbox from "../components/Checkbox";
 import Button from "../components/Button";
 import { useState } from "react";
 
